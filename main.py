@@ -42,12 +42,8 @@ def get_ipo_calendar_data():
     get_upcoming_list(upcoming_list, past_month)
     print(f'Found {len(upcoming_list)} records for IPO_Upcoming')
 
-    if not os.path.exists(f'{current_month_year_str}'):
-        os.mkdir(f'{current_month_year_str}')
-
-    path = f'{current_month_year_str}{os.sep}'
-    write_to_csv(f'{path}IPO_Priced.csv', priced_headers, priced_list)
-    write_to_csv(f'{path}IPO_Upcoming.csv', upcoming_headers, upcoming_list)
+    write_to_csv('IPO_Priced.csv', priced_headers, priced_list)
+    write_to_csv('IPO_Upcoming.csv', upcoming_headers, upcoming_list)
 
 
 def get_priced_list(lst, month):
