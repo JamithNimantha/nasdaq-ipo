@@ -42,8 +42,13 @@ def get_ipo_calendar_data():
     get_upcoming_list(upcoming_list, past_month)
     print(f'Found {len(upcoming_list)} records for IPO_Upcoming')
 
-    write_to_csv('IPO_Priced.csv', priced_headers, priced_list)
-    write_to_csv('IPO_Upcoming.csv', upcoming_headers, upcoming_list)
+    data_path = 'Data'
+    if not os.path.exists(f'{data_path}'):
+        os.mkdir(f'{data_path}')
+
+    path = f'{data_path}{os.sep}'
+    write_to_csv(f'{path}IPO_Priced.csv', priced_headers, priced_list)
+    write_to_csv(f'{path}IPO_Upcoming.csv', upcoming_headers, upcoming_list)
 
 
 def get_priced_list(lst, month):
@@ -54,7 +59,7 @@ def get_priced_list(lst, month):
 
 
 def write_to_csv(file_name, headers, data):
-    with open(file_name, 'w', encoding='UTF8') as f:
+    with open(file_name, 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(headers)
         writer.writerows(data)
