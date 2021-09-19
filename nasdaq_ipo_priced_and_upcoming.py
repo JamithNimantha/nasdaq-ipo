@@ -5,8 +5,10 @@ import requests
 
 headers = {
     'authority': 'api.nasdaq.com',
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,'
+              'application/signed-exchange;v=b3;q=0.9',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) '
+                  'Chrome/93.0.4577.82 Safari/537.36',
     'origin': 'https://www.nasdaq.com',
     'sec-fetch-site': 'same-site',
     'sec-fetch-mode': 'navigate',
@@ -15,8 +17,8 @@ headers = {
     'accept-language': 'en-US,en;q=0.9,si;q=0.8',
 }
 
-priced_headers = 'Deal ID', 'Symbol', 'Company Name', 'Exchange/ Market', 'Price', 'Shares', 'Date', 'Offer Amount', 'Actions'
-upcoming_headers = 'Deal ID', 'Symbol', 'Company Name', 'Exchange/ Market', 'Price', 'Shares', 'Expected IPO Date', 'Offer Amount'
+priced_headers = 'Deal ID', 'Symbol', 'Company Name', 'Exchange/ Market', 'Price', 'Shares', 'Date', 'Offer Amount', 'Actions '
+upcoming_headers = 'Deal ID', 'Symbol', 'Company Name', 'Exchange/ Market', 'Price', 'Shares', 'Expected IPO Date', 'Offer Amount '
 
 
 def get_ipo_calendar_data():
